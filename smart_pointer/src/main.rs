@@ -1,23 +1,13 @@
-struct MyBox<T>(T);
-use std::ops::Deref;
-
-impl<T> MyBox<T> {
-    fn new(x: T) -> MyBox<T> {
-        MyBox(x)
-    }
+enum List {
+    Cons(i32, Rc<List>),
+    Nil,
 }
 
-impl<T> Deref for MyBox<T> {
-    type Target = T;
-
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+use crate::List::{Cons, Nil};
+use std::rc::Rc;
 
 fn main() {
-    let x = 5;
-    let y = MyBox::new(x);
-
-    assert_eq!(5, *y);
+    let a  = Rc::new(Cons(5, Rc::new(Cons(10, Rc::new(Nil)))));
+    let b = Cons(3, Rc::clone(&a));
+    let c = Cons(5, Rc::clone(&a));
 }

@@ -136,6 +136,11 @@
 
 
 fn main() {
-    let _x = 5;
-    let y = 10;
+    let numbers = (2, 4, 5, 6, 1);
+
+    match numbers {
+        (first, .., last) => {
+            println!("Some numbers: {}, {}", first, last);
+        }
+    }
 }

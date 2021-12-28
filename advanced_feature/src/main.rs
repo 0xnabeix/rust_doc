@@ -1,25 +1,13 @@
-use std::ops::Add;
-
-#[derive(Debug, Copy, Clone, PartialEq)]
-struct Point {
-    x: i32,
-    y: i32,
+fn add_one(x: i32) -> i32 {
+    x + 1
 }
 
-impl Add for Point {
-    type Output = Point;
-
-    fn add(self, other: Point) -> Point {
-        Point {
-            x: self.x + other.x,
-            y: self.y + other.y,
-        }
-    }
+fn do_twice(f: fn(i32) -> i32, arg: i32) -> i32 {
+    f(arg) + f(arg)
 }
 
 fn main() {
-    assert_eq!(
-        Point { x: 1, y: 0 } + Point { x: 2, y: 3 },
-        Point { x: 3, y: 3 }
-    )
+    let answer = do_twice(add_one, 5);
+
+    println!("The answer is {}", answer);
 }

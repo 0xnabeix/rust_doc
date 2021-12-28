@@ -17,7 +17,7 @@ use gui::{Button, Screen};
 fn main() {
     let screen = Screen {
         components: vec![
-            Box::new(SelectBox {
+            SelectBox {
                 width: 75,
                 height: 10,
                 options: vec![
@@ -25,12 +25,12 @@ fn main() {
                     String::from("Maybe"),
                     String::from("No"),
                 ],
-            }),
-            Box::new(Button {
+            },
+            Button {
                 width: 50,
                 height: 10,
                 label: String::from("OK"),
-            }),
+            },
         ],
     };
 

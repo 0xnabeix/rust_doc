@@ -26,10 +26,14 @@ fn main() {
                     String::from("No"),
                 ],
             },
-            Button {
-                width: 50,
+            SelectBox {
+                width: 75,
                 height: 10,
-                label: String::from("OK"),
+                options: vec![
+                    String::from("Yes"),
+                    String::from("Maybe"),
+                    String::from("No"),
+                ],
             },
         ],
     };

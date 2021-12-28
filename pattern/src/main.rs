@@ -135,12 +135,23 @@
 // }
 
 
-fn main() {
-    let numbers = (2, 4, 5, 6, 1);
+// fn main() {
+//     let numbers = (2, 4, 5, 6, 1);
 
-    match numbers {
-        (first, .., last) => {
-            println!("Some numbers: {}, {}", first, last);
-        }
+//     match numbers {
+//         (first, .., last) => {
+//             println!("Some numbers: {}, {}", first, last);
+//         }
+//     }
+// }
+
+
+fn main() {
+    let num = Some(5);
+
+    match num {
+        Some(x) if x < 5 => println!("less than five: {}", x),
+        Some(x) => println!("{}", x),
+        None => (),
     }
 }

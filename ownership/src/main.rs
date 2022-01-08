@@ -1,16 +1,6 @@
 fn main() {
-    let s = "Helloo world";
-    let s = first_word(s);
-}
+    struct Color(i32, i32, i32);
 
-fn first_word(s: &str) -> &str {
-    let bytes = s.as_bytes();
-
-    for (i, &item) in bytes.iter().enumerate() {
-        if item == b' ' {
-            return &s[..i];
-        }
-    }
-
-    &s[..]
+    let black = Color(256, 256, 256);
+    println!("{}", black.0);
 }
